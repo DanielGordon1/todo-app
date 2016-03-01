@@ -1,0 +1,23 @@
+<div class='container text-center'> <h1>Tasks Mainpage</h1>
+  <form action="/tasks/new">
+    <input type="submit" value="Create a task">
+  </form>
+</div> 
+<table class='table'>
+<tr>
+  <th>ID</th>
+  <th>Name</th>
+  <th>Content</th>
+  <th>Destroy</th>
+  <th>Edit</th>
+</tr>
+
+<% @tasks.each do |task| %>
+<tr>
+<td><h2><%= task.id %> </h2></td>
+<td><h2><%= link_to task.name, task_path(task) %></h2></td>
+<td><p><%= task.content %></p></td>
+<td><p><%= link_to "Destroy this task", task_path(task), method: :delete %></p></td>
+<td><p><%= link_to "Edit this task", edit_task_path(task) %></p></td>
+<% end %>
+</tr>
