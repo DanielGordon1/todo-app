@@ -17,7 +17,7 @@
 <td><h2><%= task.id %> </h2></td>
 <td><h2><%= link_to task.name, task_path(task) %></h2></td>
 <td><p><%= task.content %></p></td>
-<td><p><%= link_to "Destroy this task", task_path(task), method: :delete %></p></td>
-<td><p><%= link_to "Edit this task", edit_task_path(task) %></p></td>
+<td><button type="button" class="btn btn-danger"><%= link_to "Destroy this task", task_path(task), method: :delete %></button></td>
+<td><button type="button" class="btn btn-primary"><%= link_to "Edit this task", edit_task_path(task) %></button></td>
 <% end %>
 </tr>
