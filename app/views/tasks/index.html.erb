@@ -2,7 +2,7 @@
   <form action="/tasks/new">
     <input type="submit" value="Create a task">
   </form>
-</div> 
+</div>
 <table class='table'>
 <tr>
   <th>ID</th>
@@ -17,7 +17,7 @@
 <td><h2><%= task.id %> </h2></td>
 <td><h2><%= link_to task.name, task_path(task) %></h2></td>
 <td><p><%= task.content %></p></td>
-<td><button type="button" class="btn btn-danger"><%= link_to "Destroy this task", task_path(task), method: :delete %></button></td>
-<td><button type="button" class="btn btn-primary"><%= link_to "Edit this task", edit_task_path(task) %></button></td>
+<td><%= link_to "Destroy this task", task_path(task), method: :delete, class: "btn btn-danger" %></td>
+<td><%= link_to "Edit this task", edit_task_path(task), class: "btn btn-primary" %></td>
 <% end %>
 </tr>
